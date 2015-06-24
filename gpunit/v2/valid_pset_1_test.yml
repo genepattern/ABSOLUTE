@@ -2,7 +2,7 @@
 #
 module: ABSOLUTE
 params:
-       seg.dat.file: "DRAWS_DRAWS_p_Sty11_Mapping250K_Sty_A01_66524.segdat.RData"
+       seg.dat.file: "<%gpunit.testData%>/gpunit/ABSOLUTE/v2/DRAWS_DRAWS_p_Sty11_Mapping250K_Sty_A01_66524.segdat.RData"
        output.file.name.base: "<sample.name>"
        sigma.p: "0"
        max.sigma.h: "0.02"
@@ -17,11 +17,13 @@ params:
        copy.number.type: "allelic"
        maf.file: ""
        min.mut.af: ""
-assertions:
-        diffCmd: ./stdoutDiff.sh
-        files:
-            "stdout.txt":
-                diff: "/Volumes/xchip_sqa/Modules/TestSuiteData/ABSOLUTE/v1/valid_pset_1_test/stdout.txt"
+
+# For first round this is left out as it requires local assertion. Will next make a module to do this as a remote assertion.
+#assertions:
+        #diffCmd: ./stdoutDiff.sh
+        #files:
+            #"stdout.txt":
+                #diff: "/Volumes/xchip_sqa/Modules/TestSuiteData/ABSOLUTE/v1/valid_pset_1_test/stdout.txt"
 
 # See notes in the HAPSEG valid_pset_1_test.yml file about the suitability
 # of this as a definitive regression test.
