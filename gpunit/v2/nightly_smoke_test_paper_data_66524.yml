@@ -26,5 +26,5 @@ assertions:
             #"stdout.txt":
                 #diff: "/Volumes/xchip_sqa/Modules/TestSuiteData/ABSOLUTE/v1/valid_pset_1_test/stdout.txt"
 
-# See notes in the HAPSEG valid_pset_1_test.yml file about the suitability
+# See notes in the HAPSEG nightly_smoke_test_paper_data_66524.yml file about the suitability
 # of this as a definitive regression test.
