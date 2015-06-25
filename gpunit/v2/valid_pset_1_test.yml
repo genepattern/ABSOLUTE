@@ -18,8 +18,9 @@ params:
        maf.file: ""
        min.mut.af: ""
 
-# For first round this is left out as it requires local assertion. Will next make a module to do this as a remote assertion.
-#assertions:
+assertions:
+        jobStatus: success
+        # For first round this is left out as it requires local assertion. Will next make a module to do this as a remote assertion.
         #diffCmd: ./stdoutDiff.sh
         #files:
             #"stdout.txt":
