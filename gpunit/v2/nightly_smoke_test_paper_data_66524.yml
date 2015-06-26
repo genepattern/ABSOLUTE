@@ -15,8 +15,9 @@ params:
        max.neg.genome: "0"
        max.non.clonal: "0"
        copy.number.type: "allelic"
-       maf.file: ""
-       min.mut.af: ""
+       #can't be an empty string
+       #maf.file: ""
+       #min.mut.af: ""
 
 assertions:
         jobStatus: success
