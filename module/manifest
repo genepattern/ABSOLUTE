@@ -7,7 +7,7 @@ author=Scott Carter, Matthew Meyerson, Gad Getz
 
 commandLine=Rscript --no-save --quiet --slave --no-restore /usr/local/bin/ABSOLUTE/run_absolute.R  --output.fn.base\=<output.file.name.base> --seg.dat.fn\=<seg.dat.file> --sigma.p\=<sigma.p> --max.sigma.h\=<max.sigma.h> --min.ploidy\=<min.ploidy> --max.ploidy\=<max.ploidy> --primary.disease\=<primary.disease> --platform\=<platform> --sample.name\=<sample.name> --max.as.seg.count\=<max.as.seg.count> --max.neg.genome\=<max.neg.genome> --max.non.clonal\=<max.non.clonal> --copy.number.type\=<copy.number.type> <maf.file> <min.mut.af>
 
-job.docker.image=genepattern/docker-absolute
+job.docker.image=genepattern/docker-absolute:0.01
 cpuType=any
 description=[**Beta Release** Contact gp-help with any issues. Check stdout.txt and stderr.txt for errors] Extracts absolute copy numbers per cancer cell from a mixed DNA population. Use this module for the per-sample processing step in the workflow (usually after HAPSEG).
 fileFormat=pdf;RData;txt
@@ -129,8 +129,6 @@ p9_type=java.lang.String
 p9_value=
 privacy=public
 publicationDate=05/23/2015 11\:35 
-requiredPatchLSIDs=urn\:lsid\:broad.mit.edu\:cancer.software.genepattern.server.patch\:GenePattern_3_4_2\:2,urn\:lsid\:broadinstitute.org\:plugin\:Ant_1.8\:1,urn\:lsid\:broadinstitute.org\:plugin\:R2.15_Installer\:2,urn\:lsid\:broadinstitute.org\:rlib.2.15\:numDeriv_2012.9-1\:1,urn\:lsid\:broadinstitute.org\:rlib.2.15\:getopt_1.17\:1,urn\:lsid\:broadinstitute.org\:rlib.2.15\:optparse_0.9.5\:1,urn\:lsid\:broadinstitute.org\:rlib.2.15\:ABSOLUTE_1.0.6\:1
-requiredPatchURLs=http\://www.broadinstitute.org/webservices/gpModuleRepository/download/prod/patch/?file\=/GenePattern_3_4_2/broad.mit.edu\:cancer.software.genepattern.server.patch/GenePattern_3_4_2/2/GenePattern_3_4_2.zip,http\://www.broadinstitute.org/webservices/gpModuleRepository/download/prod/patch/?file\=/Ant_1_8/broadinstitute.org\:plugin/Ant_1.8/1/Ant_1_8.zip,http\://www.broadinstitute.org/webservices/gpModuleRepository/download/prod/patch/?file\=/R2.15_Installer/broadinstitute.org\:plugin/R2.15_Installer/2/R2.15_Installer.zip,http\://www.broadinstitute.org/webservices/gpModuleRepository/download/prod/patch/?file\=/rlib.2.15_numDeriv_2012.9-1/broadinstitute.org\:rlib.2.15/numDeriv_2012.9-1/1/rlib.2.15_numDeriv_2012.9-1.zip,http\://www.broadinstitute.org/webservices/gpModuleRepository/download/prod/patch/?file\=/rlib.2.15_getopt_1.17/broadinstitute.org\:rlib.2.15/getopt_1.17/1/rlib.2.15_getopt_1.17.zip,http\://www.broadinstitute.org/webservices/gpModuleRepository/download/prod/patch/?file\=/rlib.2.15_optparse_0.9.5/broadinstitute.org\:rlib.2.15/optparse_0.9.5/1/rlib.2.15_optparse_0.9.5.zip,http\://www.broadinstitute.org/webservices/gpModuleRepository/download/prod/patch/?file\=/rlib.2.15_ABSOLUTE_1.0.6/broadinstitute.org\:rlib.2.15/ABSOLUTE_1.0.6/1/rlib.2.15_ABSOLUTE_1.0.6.zip
 taskDoc=doc.html
 taskType=SNP Analysis
 version=Updates the R Installer plug-in for better portability.  Fixes a bug with the min.mut.af parameter.
