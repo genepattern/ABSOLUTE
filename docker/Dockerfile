@@ -7,17 +7,17 @@ COPY ./ /usr/local/bin/ABSOLUTE
 
 RUN cp /usr/local/bin/ABSOLUTE/patches/ABSOLUTE_1.0.6.zip  /patches/rlib/2.15/site-library && \
     cd /patches/rlib/2.15/site-library  && \
-    unzip ABSOLUTE_1.0.6.zip && \
-    cp /usr/local/bin/ABSOLUTE/patches/getopt_1.17.zip  /patches/rlib/2.15/site-library && \
-    cd /patches/rlib/2.15/site-library && \
-    unzip getopt_1.17.zip && \
-    cp /usr/local/bin/ABSOLUTE/patches/numDeriv_2012.9-1.zip  /patches/rlib/2.15/site-library && \
-    unzip numDeriv_2012.9-1.zip && \
-    cp /usr/local/bin/ABSOLUTE/patches/optparse_0.9.5.zip  /patches/rlib/2.15/site-library && \
-    unzip optparse_0.9.5.zip 
+    unzip ABSOLUTE_1.0.6.zip
+#    cp /usr/local/bin/ABSOLUTE/patches/getopt_1.17.zip  /patches/rlib/2.15/site-library && \
+#    cd /patches/rlib/2.15/site-library && \
+#    unzip getopt_1.17.zip && \
+#    cp /usr/local/bin/ABSOLUTE/patches/numDeriv_2012.9-1.zip  /patches/rlib/2.15/site-library && \
+#    unzip numDeriv_2012.9-1.zip && \
+#    cp /usr/local/bin/ABSOLUTE/patches/optparse_0.9.5.zip  /patches/rlib/2.15/site-library && \
+#    unzip optparse_0.9.5.zip 
 
-
+RUN Rscript /usr/local/bin/ABSOLUTE/installPackages.R /usr/local/bin/ABSOLUTE/r.package.info
 
 RUN Rscript /usr/local/bin/ABSOLUTE/dockerLoadLibrary.R
 
-
+RUN Rscript --version
