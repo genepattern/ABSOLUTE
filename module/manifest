@@ -7,7 +7,7 @@ author=Scott Carter, Matthew Meyerson, Gad Getz
 
 commandLine=Rscript --no-save --quiet --slave --no-restore /usr/local/bin/ABSOLUTE/run_absolute.R  --output.fn.base\=<output.file.name.base> --seg.dat.fn\=<seg.dat.file> --sigma.p\=<sigma.p> --max.sigma.h\=<max.sigma.h> --min.ploidy\=<min.ploidy> --max.ploidy\=<max.ploidy> --primary.disease\=<primary.disease> --platform\=<platform> --sample.name\=<sample.name> --max.as.seg.count\=<max.as.seg.count> --max.neg.genome\=<max.neg.genome> --max.non.clonal\=<max.non.clonal> --copy.number.type\=<copy.number.type> <maf.file> <min.mut.af>
 
-job.docker.image=genepattern/docker-absolute:0.01
+job.docker.image=genepattern/docker-absolute:0.02
 cpuType=any
 description=[**Beta Release** Contact gp-help with any issues. Check stdout.txt and stderr.txt for errors] Extracts absolute copy numbers per cancer cell from a mixed DNA population. Use this module for the per-sample processing step in the workflow (usually after HAPSEG).
 fileFormat=pdf;RData;txt

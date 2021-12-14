@@ -10,49 +10,20 @@
 
 # Bridging script to accept parameters from GenePattern and use them to call ABSOLUTE
 
-args <- commandArgs(trailingOnly=TRUE)
+# Load required libraries
+suppressMessages(suppressWarnings(library(numDeriv)))
+suppressMessages(suppressWarnings(library(getopt)))
+suppressMessages(suppressWarnings(library(optparse)))
+#suppressMessages(suppressWarnings(library(ABSOLUTE)))
 
-#vers <- "2.15"            # R version
-#libdir <- args[1]
-#server.dir <- args[2]
-#patch.dir <- args[3]
-
-#source(file.path(libdir, "loadRLibrary.R"))
-#load.packages(libdir, patch.dir, server.dir, vers)
-
-# In the long run, loadRLibrary should be updated to be able to pull in packages
-# from other library locations; we are saving that work for another time.  For now,
-# we will just explicitly load the ABSOLUTE package for the installed location.
-# Note that this takes the installation pattern that we want to use in the long
-# run, so we will be able to retrofit this module when those changes are made.
-# That pattern is:
-#    <patch.dir>/rlib/<r.version>/<pkg.origin>/<pkg.name>
-#pkg.origin <- "BroadInstitute"
-#pkg.name <- "ABSOLUTE_1.0.6"
-#parent.dir <- paste(patch.dir, "rlib", vers, sep="/")
-#absol.library <- paste(parent.dir, pkg.origin, pkg.name, sep="/")
-#
-#.libPaths(c(absol.library, .libPaths()))
-#suppressPackageStartupMessages(library("ABSOLUTE", lib.loc = absol.library, character.only=TRUE))
-
-#=======================
-libdir = '/usr/local/bin/ABSOLUTE/'
-patch.dir = '/patches'
-server.dir='/usr/local/lib/R'
-vers="2.15"
 absol.library="/patches/rlib/2.15/site-library"
-.libPaths(c(absol.library, .libPaths()))
-
-source(file.path(libdir, "loadRLibrary.R"))
-load.packages(libdir, patch.dir, server.dir, vers)
-
 suppressPackageStartupMessages(library("ABSOLUTE", lib.loc = absol.library, character.only=TRUE))
 
 
-# ==============
 
+sessionInfo()
 
-
+args <- commandArgs(trailingOnly=TRUE)
 
 option_list <- list(
   make_option("--seg.dat.fn", dest="seg.dat.fn"),
@@ -143,8 +114,6 @@ if (is.null(opts$output.fn.base)) {
   output.fn.base <- opts$output.fn.base
 }
 
-sessionInfo()
-
 suppressWarnings(  # Done at JGentry's suggestion; R pkgs tend to put irrelevant output on stderr.
 
   RunAbsolute(opts$seg.dat.fn, sigma.p, max.sigma.h,
@@ -156,3 +125,5 @@ suppressWarnings(  # Done at JGentry's suggestion; R pkgs tend to put irrelevant
               output.fn.base=output.fn.base, verbose=TRUE, 
               maf.fn=maf.fn, min.mut.af=min.mut.af)
 )
+
+sessionInfo()
